@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AICOS — Chief of Staff Graph</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/3d-force-graph"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header>
+        <div>
+          <p class="eyebrow">AI Chief of Staff</p>
+          <h1>AICOS Graph Intelligence</h1>
+          <p class="subtitle">
+            Track people, projects, and signals in one connected workspace.
+          </p>
+        </div>
+        <div class="status-pill">Neo4j Connected</div>
+      </header>
+
+      <section class="controls">
+        <div class="filter-group">
+          <label for="personFilter">Person</label>
+          <select id="personFilter"></select>
+        </div>
+        <div class="filter-group">
+          <label for="projectFilter">Project</label>
+          <select id="projectFilter"></select>
+        </div>
+        <div class="filter-group">
+          <label for="signalFilter">Signal Type</label>
+          <select id="signalFilter"></select>
+        </div>
+        <button id="resetFilters">Reset</button>
+      </section>
+
+      <main>
+        <div class="graph-panel">
+          <div id="graph"></div>
+          <div class="legend">
+            <div><span class="dot person"></span>People</div>
+            <div><span class="dot project"></span>Projects</div>
+            <div><span class="dot signal"></span>Signals</div>
+          </div>
+        </div>
+        <aside class="chat-panel">
+          <div class="chat-header">
+            <h2>Chief of Staff Chat</h2>
+            <p>Ask questions like “who is the best team member for complex graphing?”</p>
+          </div>
+          <div class="chat-history" id="chatHistory"></div>
+          <form id="chatForm" class="chat-input">
+            <input
+              type="text"
+              id="chatQuestion"
+              placeholder="Ask a question about the team..."
+              required
+            />
+            <button type="submit">Send</button>
+          </form>
+        </aside>
+      </main>
+    </div>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
